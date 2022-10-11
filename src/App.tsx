@@ -1,4 +1,3 @@
-import { ThemeProvider } from 'styled-components';
 import styled from "styled-components";
 
 import Grid from "./components/Grid";
@@ -11,19 +10,12 @@ const AppBlock = styled.div`
   margin: 0 auto;
 `;
 
-const theme = {
-  backgroundColor: 'rgb(190, 194, 211)',
-  mainColor: '#6150cf',
-  cardBackgroundColor: 'white'
-}
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <AppBlock>
-        <Grid />
-      </AppBlock>
-    </ThemeProvider>
+    <AppBlock>
+      <Grid />
+    </AppBlock>
   );
 }
 

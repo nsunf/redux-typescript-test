@@ -2,7 +2,7 @@ import { darken, lighten } from "polished";
 import { ChangeEvent, useState } from "react";
 
 import styled from "styled-components";
-import { addCustomFact } from "../redux/CatFactSlice";
+import { addCustomFact, fetchCatImage } from "../redux/CatFactSlice";
 import { useAppDispatch } from "../redux/Hooks";
 
 import Card from "./Card";
@@ -59,13 +59,13 @@ function InputCard() {
   const [input, setInput] = useState<string>();
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // console.log(e.target.value);
     setInput(e.target.value);
   }
 
   const onSubmit = () => {
     if (input)
       dispatch(addCustomFact(input));
+    dispatch(fetchCatImage("404"));
       setInput("");
   }
 
